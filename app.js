@@ -4,7 +4,7 @@ const app =  express();
 const {db} = require('./database')
 
 
-const PROT = 3000;
+const PROT = 3001;
 app.listen(PROT,() =>{
     console.log ('ma ma koko');
 })
@@ -15,7 +15,7 @@ app.get('/',(req,res) =>{
     res.send ('Hello');
 });
 app.get('/users', (req,res) =>{
-    let sql = "select * from student"
+    let sql = "select * from users"
     db.query(sql,(error,result) =>{
         if (error){
             return console.log(error)
